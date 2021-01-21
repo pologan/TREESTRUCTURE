@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TREESTRUCTURE.WEB", "TREESTRUCTURE.WEB\TREESTRUCTURE.WEB.csproj", "{FD5DF829-3F4A-4A3A-83D0-6C45DB1E979C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TREESTRUCTURE.DATABASE", "TREESTRUCTURE.DATABASE\TREESTRUCTURE.DATABASE.csproj", "{0417AB4F-D0E7-4B0C-8344-2E30F11A0C51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD5DF829-3F4A-4A3A-83D0-6C45DB1E979C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD5DF829-3F4A-4A3A-83D0-6C45DB1E979C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD5DF829-3F4A-4A3A-83D0-6C45DB1E979C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD5DF829-3F4A-4A3A-83D0-6C45DB1E979C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0417AB4F-D0E7-4B0C-8344-2E30F11A0C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0417AB4F-D0E7-4B0C-8344-2E30F11A0C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0417AB4F-D0E7-4B0C-8344-2E30F11A0C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0417AB4F-D0E7-4B0C-8344-2E30F11A0C51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6219B387-31C3-4279-8878-CB2BB6741802}
+	EndGlobalSection
+EndGlobal
