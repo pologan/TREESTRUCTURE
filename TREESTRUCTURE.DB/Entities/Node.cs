@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TREESTRUCTURE.DATABASE.Entities.Shared;
+using TREESTRUCTURE.DB.Entities.Shared;
 
-namespace TREESTRUCTURE.DATABASE.Entities
+namespace TREESTRUCTURE.DB.Entities
 {
     public class Node : BaseObject
     {

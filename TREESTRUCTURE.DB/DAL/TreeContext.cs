@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TREESTRUCTURE.DATABASE.Entities;
+using TREESTRUCTURE.DB.Entities;
 
-namespace TREESTRUCTURE.DATABASE.DAL
+namespace TREESTRUCTURE.DB.DAL
 {
-    class TreeContext : DbContext
+    public class TreeContext : DbContext
     {
         public TreeContext(DbContextOptions<TreeContext> opt) : base(opt) { }
 

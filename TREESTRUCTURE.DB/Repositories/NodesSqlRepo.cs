@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TREESTRUCTURE.DATABASE.DAL;
-using TREESTRUCTURE.DATABASE.Entities;
-using TREESTRUCTURE.DATABASE.Interfaces;
+using TREESTRUCTURE.DB.DAL;
+using TREESTRUCTURE.DB.Entities;
+using TREESTRUCTURE.DB.Interfaces;
 
-namespace TREESTRUCTURE.DATABASE.Repositories
+namespace TREESTRUCTURE.DB.Repositories
 {
     public class NodesSqlRepo : INodesRepo
     {
         private TreeContext _context;
+        public NodesSqlRepo(TreeContext context)
+        {
+            _context = context;
+        }
+
         public void CreateNode(Node node)
         {
             _context.Nodes.Add(node);

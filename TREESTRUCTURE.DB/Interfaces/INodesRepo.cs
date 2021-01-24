@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TREESTRUCTURE.DATABASE.Entities;
+using TREESTRUCTURE.DB.Entities;
 
-namespace TREESTRUCTURE.DATABASE.Interfaces
+namespace TREESTRUCTURE.DB.Interfaces
 {
     public interface INodesRepo
     {

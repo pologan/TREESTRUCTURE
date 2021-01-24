@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TREESTRUCTURE.DATABASE.Entities.Shared
+namespace TREESTRUCTURE.DB.Entities.Shared
 {
     public class BaseObject
     {

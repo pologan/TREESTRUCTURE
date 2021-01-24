@@ -8,8 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TREESTRUCTURE.DATABASE.Interfaces;
-using TREESTRUCTURE.DATABASE.Repositories;
+using TREESTRUCTURE.DB.Interfaces;
+using TREESTRUCTURE.DB.Repositories;
+using TREESTRUCTURE.DB.DAL;
+using Microsoft.EntityFrameworkCore;
 
 namespace TREESTRUCTURE.WEB
 {
@@ -26,6 +28,10 @@ namespace TREESTRUCTURE.WEB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<TreeContext>(opt => opt.UseSqlServer(
+                Configuration.GetConnectionString("NodesConnection"),
+                x => x.MigrationsAssembly("TREESTRUCTURE.WEB")));
 
             services.AddScoped<INodesRepo, NodesSqlRepo>();
         }
