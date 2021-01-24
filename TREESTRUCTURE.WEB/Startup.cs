@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TREESTRUCTURE.DATABASE.Interfaces;
+using TREESTRUCTURE.DATABASE.Repositories;
 
 namespace TREESTRUCTURE.WEB
 {
@@ -24,6 +26,8 @@ namespace TREESTRUCTURE.WEB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddScoped<INodesRepo, NodesSqlRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
