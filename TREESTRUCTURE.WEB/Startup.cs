@@ -30,8 +30,7 @@ namespace TREESTRUCTURE.WEB
             services.AddControllersWithViews();
 
             services.AddDbContext<TreeContext>(opt => opt.UseSqlServer(
-                Configuration.GetConnectionString("NodesConnection"),
-                x => x.MigrationsAssembly("TREESTRUCTURE.WEB")));
+                Configuration.GetConnectionString("NodesConnection")));
 
             services.AddScoped<INodesRepo, NodesSqlRepo>();
         }
@@ -46,7 +45,6 @@ namespace TREESTRUCTURE.WEB
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
@@ -60,7 +58,7 @@ namespace TREESTRUCTURE.WEB
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Tree}/{action=Index}/{id?}");
             });
         }
     }

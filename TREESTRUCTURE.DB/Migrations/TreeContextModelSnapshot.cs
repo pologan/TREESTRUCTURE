@@ -33,28 +33,27 @@ namespace TREESTRUCTURE.DB.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<long?>("ParentId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("ParentNodeId")
-                        .HasColumnType("bigint");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ParentNodeId");
+                    b.HasIndex("ParentId");
 
                     b.ToTable("Nodes");
                 });
 
             modelBuilder.Entity("TREESTRUCTURE.DB.Entities.Node", b =>
                 {
-                    b.HasOne("TREESTRUCTURE.DB.Entities.Node", "ParentNode")
+                    b.HasOne("TREESTRUCTURE.DB.Entities.Node", "Parent")
                         .WithMany("ChildNodes")
-                        .HasForeignKey("ParentNodeId");
+                        .HasForeignKey("ParentId");
 
-                    b.Navigation("ParentNode");
+                    b.Navigation("Parent");
                 });
 
             modelBuilder.Entity("TREESTRUCTURE.DB.Entities.Node", b =>

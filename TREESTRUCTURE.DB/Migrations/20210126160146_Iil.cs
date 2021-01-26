@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TREESTRUCTURE.DB.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Iil : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,9 +13,8 @@ namespace TREESTRUCTURE.DB.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     ParentId = table.Column<long>(type: "bigint", nullable: true),
-                    ParentNodeId = table.Column<long>(type: "bigint", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -23,17 +22,17 @@ namespace TREESTRUCTURE.DB.Migrations
                 {
                     table.PrimaryKey("PK_Nodes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Nodes_Nodes_ParentNodeId",
-                        column: x => x.ParentNodeId,
+                        name: "FK_Nodes_Nodes_ParentId",
+                        column: x => x.ParentId,
                         principalTable: "Nodes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Nodes_ParentNodeId",
+                name: "IX_Nodes_ParentId",
                 table: "Nodes",
-                column: "ParentNodeId");
+                column: "ParentId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

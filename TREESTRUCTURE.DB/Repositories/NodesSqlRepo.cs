@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using TREESTRUCTURE.DB.DAL;
 using TREESTRUCTURE.DB.Entities;
-using TREESTRUCTURE.DB.Interfaces;
+using TREESTRUCTURE.DB.Repositories.Shared;
 
 namespace TREESTRUCTURE.DB.Repositories
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TREESTRUCTURE.DB.Entities;
 
-namespace TREESTRUCTURE.DB.Interfaces
+namespace TREESTRUCTURE.DB.Repositories.Shared
 {
     public interface INodesRepo
     {
