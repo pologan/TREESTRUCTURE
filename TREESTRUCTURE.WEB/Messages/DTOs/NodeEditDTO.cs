@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace TREESTRUCTURE.DB.Messages.DTOs
+namespace TREESTRUCTURE.WEB.Messages.DTOs
 {
-    class NodeEditDTO
+    public class NodeEditDTO
     {
         public long Id { get; set; }
         public string Name { get; set; }

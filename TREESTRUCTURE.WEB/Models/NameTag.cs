@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace TREESTRUCTURE.WEB.Models
 {
-    public class ErrorViewModel
+    public class NameTag
     {
-        public string RequestId { get; set; }
-
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public long Id { get; set; }
+        public string Name { get; set; }
     }
 }

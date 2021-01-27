@@ -1,17 +1,16 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using TREESTRUCTURE.DB.Interfaces;
-using TREESTRUCTURE.DB.Repositories;
 using TREESTRUCTURE.DB.DAL;
-using Microsoft.EntityFrameworkCore;
+using TREESTRUCTURE.DB.Repositories;
+using TREESTRUCTURE.DB.Repositories.Interfaces;
+using TREESTRUCTURE.WEB.Profiles;
+using TREESTRUCTURE.WEB.Services;
+using TREESTRUCTURE.WEB.Services.Shared;
 
 namespace TREESTRUCTURE.WEB
 {
@@ -33,6 +32,10 @@ namespace TREESTRUCTURE.WEB
                 Configuration.GetConnectionString("NodesConnection")));
 
             services.AddScoped<INodesRepo, NodesSqlRepo>();
+
+            services.AddScoped<INodesService, NodesService>();
+
+            services.AddAutoMapper(typeof(NodeProfile));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -69,3 +69,112 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.main-app {
+    display: flex;
+}
+
+.section {
+    min-width: 50vh;
+    min-height: 50vh;
+    padding: 0 !important;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 30px;
+}
+
+.section-header-title {
+    margin-left: 5px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.section-header-actions {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.header-icon {
+    border: none;
+    margin-right: 10px;
+    background: none;
+    font-size: 40px;
+    color: #008607;
+}
+
+.action-icon {
+    cursor: pointer;
+    border: none;
+    margin-top:10px;
+    margin-right: 40px;
+    background: none;
+    font-size: 50px;
+    color: #808080;
+}
+
+    .action-icon:hover {
+        color: #000000;
+        background-color: #eeeeee;
+    }
+
+#tree {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+ul, #tree {
+    list-style-type: none;
+}
+
+    #tree ul {
+        margin: 0;
+        padding-left: 20px;
+        border-left: 1px dashed #878787;
+    }
+
+    #tree :first-child {
+        border: none !important;
+    }
+
+.caret {
+    cursor: pointer;
+    user-select: none;
+}
+
+    .caret::before {
+        content: "\25B6";
+        color: black;
+        display: inline-block;
+        margin-right: 6px;
+    }
+
+.caret-down::before {
+    transform: rotate(90deg);
+}
+
+.nested {
+    display: normal;
+}
+
+.empty, .tree-actions {
+    margin-left: 19px;
+}
+
+.active {
+    display: block;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end
+}
+
+    .modal-buttons button {
+        margin: 10px;
+    }

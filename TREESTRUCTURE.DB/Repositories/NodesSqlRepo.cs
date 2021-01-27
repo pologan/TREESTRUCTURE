@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using TREESTRUCTURE.DB.DAL;
 using TREESTRUCTURE.DB.Entities;
-using TREESTRUCTURE.DB.Repositories.Shared;
+using TREESTRUCTURE.DB.Repositories.Interfaces;
 
 namespace TREESTRUCTURE.DB.Repositories
 {
@@ -28,12 +28,17 @@ namespace TREESTRUCTURE.DB.Repositories
 
         public IEnumerable<Node> GetAllNodes()
         {
-            return _context.Nodes.ToList();
+            return _context.Nodes.Where(n => n.ParentId == null).ToList();
         }
 
-        public Node GetNodesById(long id)
+        public Node GetNodeById(long id)
         {
             return _context.Nodes.Find(id);
+        }
+
+        public IEnumerable<Node> GetNames()
+        {
+            return _context.Nodes.ToList();
         }
 
         public bool SaveChanges()
