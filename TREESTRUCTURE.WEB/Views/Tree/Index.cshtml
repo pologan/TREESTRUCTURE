@@ -8,7 +8,7 @@
             <span class="section-header-title">Add Nodes to the Tree</span>
         </div>
         <div class="section-header">
-            <div><button onclick="showAddModal()" class="action-icon"><i class="fas fa-plus-square"></i></button></div>
+            <div><button onclick="showAddModal()" class="action-icon"><i class="fas fa-plus"></i></button></div>
             <div><button onclick="sortByName('main-app-folder')" class="action-icon"><i class="fas fa-sort"></i></button></div>
         </div>
             <div id="tree"></div>
@@ -31,14 +31,14 @@
             });
     }
 
-    function buildDirectories(data, parentId, isNode) {
+    function buildDirectories(data, parentId, isChildNode) {
         var html = '';
-        html += (isNode) ? `<ul id='${parentId}' class="nested" data-sort="0">` : `<ul id='${parentId}'>`;
+        html += (isChildNode) ? `<ul id='${parentId}' class="nested" data-sort="0">` : `<ul id='${parentId}'>`;
         for (item in data) {
             html += '<li>';
-            if (data[item].nodes.length > 0) {
+            if (data[item].childNodes.length > 0) {
                 html += '<span class="caret">' + data[item].name + '</span>' + addActions(data[item], true);
-                html += buildDirectories(data[item].nodes, data[item].id, true);
+                html += buildDirectories(data[item].childNodes, data[item].id, true);
             } else {
                 html += '<span class="empty">' + data[item].name + '</span>' + addActions(data[item], false);
             }
@@ -50,18 +50,18 @@
 
     function addActions(data, isSortable) {
         var html = '<span class="tree-actions">' +
-            '<button class="action-icon"onclick="showAddModal(' +
+            '<button class="action-icon-tree"onclick="showAddModal(' +
             data.id +
-            ')"><i class="fas fa-plus-circle"></i></button>' +
-            '<button class="action-icon" onclick="showEditModal(' +
+            ')"><i class="fas fa-plus"></i></button>' +
+            '<button class="action-icon-tree" onclick="showEditModal(' +
             data.id +
             ')"><i class="fas fa-pen"></i></button>' +
-            '<button class="action-icon" onclick="deleteNode(' +
+            '<button class="action-icon-tree-delete" onclick="deleteNode(' +
             data.id +
-            ')"><i class="fas fa-times-circle"></i></button>' +
+            ')"><i class="fas fa-times"></i></button>' +
             '</span>';
         if (isSortable) {
-            html += '<button class="action-icon" onclick="sortByName(' +
+            html += '<button class="action-icon-tree" onclick="sortByName(' +
                 data.id +
                 ')"><i class="fas fa-sort"URL_TAGS</i></button>' +
                 '</span>';

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace TREESTRUCTURE.DB.Repositories
 
         public IEnumerable<Node> GetAllNodes()
         {
-            return _context.Nodes.Where(n => n.ParentId == null).ToList();
+            return _context.Nodes.Where(n => n.ParentId == null).Include(n => n.ChildNodes).ThenInclude(n => n.ChildNodes).ToList();
         }
 
         public Node GetNodeById(long id)

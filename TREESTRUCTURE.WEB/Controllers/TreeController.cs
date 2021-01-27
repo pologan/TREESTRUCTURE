@@ -29,7 +29,7 @@ namespace TREESTRUCTURE.WEB.Controllers
         [HttpGet]
         public List<NodeDTO> GetAll()
         {
-            var nodes = _service.GetAllNodes();
+
             return _service.GetAllNodes();
         }
 

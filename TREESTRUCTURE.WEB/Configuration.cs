@@ -9,6 +9,7 @@ namespace TREESTRUCTURE.WEB
     {
         public const string URL_TAGS = "/Tree/GetNameTags";
         public const string URL_GET_NODES = "/Tree/GetAll";
+        public const string URL_GET_NODE_BY_ID = "/Tree/GetNodeByID";
         public const string URL_TREE_ADD = "/Tree/Add";
         public const string URL_TREE_EDIT = "/Tree/Edit";
         public const string URL_TREE_DELETE = "/Tree/Delete";
