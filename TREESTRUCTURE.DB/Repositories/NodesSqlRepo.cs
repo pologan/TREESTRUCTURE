@@ -29,7 +29,7 @@ namespace TREESTRUCTURE.DB.Repositories
 
         public IEnumerable<Node> GetAllNodes()
         {
-            return _context.Nodes.Where(n => n.ParentId == null).Include(n => n.ChildNodes).ThenInclude(n => n.ChildNodes).ToList();
+            return _context.Nodes.ToList().Where(n => n.ParentId == null);
         }
 
         public Node GetNodeById(long id)

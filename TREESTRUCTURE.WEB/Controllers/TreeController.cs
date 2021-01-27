@@ -71,7 +71,7 @@ namespace TREESTRUCTURE.WEB.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(long id)
+        public IActionResult GetById(long id)
         {
             var node = _service.GetNodeById(id);
 
