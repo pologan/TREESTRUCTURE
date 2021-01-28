@@ -28,8 +28,11 @@ namespace TREESTRUCTURE.WEB
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<TreeContext>(opt => opt.UseSqlServer(
-                Configuration.GetConnectionString("NodesConnection")));
+            services.AddDbContext<TreeContext>(opt => 
+            {
+                opt.UseLazyLoadingProxies();
+                opt.UseSqlServer(Configuration.GetConnectionString("NodesConnection"));
+            });
 
             services.AddScoped<INodesRepo, NodesSqlRepo>();
 

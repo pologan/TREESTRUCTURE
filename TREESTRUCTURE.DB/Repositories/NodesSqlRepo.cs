@@ -24,12 +24,16 @@ namespace TREESTRUCTURE.DB.Repositories
 
         public void DeleteNode(Node node)
         {
+            if(node.ChildNodes.Count > 0)
+            {
+                RemoveChildren(node);
+            }
             _context.Nodes.Remove(node);
         }
 
         public IEnumerable<Node> GetAllNodes()
         {
-            return _context.Nodes.ToList().Where(n => n.ParentId == null);
+            return _context.Nodes.Where(n => n.ParentId == null).ToList();
         }
 
         public Node GetNodeById(long id)
@@ -51,6 +55,18 @@ namespace TREESTRUCTURE.DB.Repositories
         public void UpdateNode(Node node)
         {
             _context.Nodes.Update(node);
+        }
+
+        private void RemoveChildren(Node node)
+        {
+            foreach (var n in node.ChildNodes)
+            {
+                if (n.ChildNodes.Count > 0)
+                {
+                    RemoveChildren(n);
+                }
+                _context.Nodes.Remove(n);
+            }
         }
     }
 }

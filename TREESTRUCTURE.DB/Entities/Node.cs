@@ -12,9 +12,9 @@ namespace TREESTRUCTURE.DB.Entities
         [MaxLength(20)]
         public string Name { get; protected set; }
         
-        public List<Node> ChildNodes { get; protected set; }
+        public virtual List<Node> ChildNodes { get; protected set; }
         public long? ParentId { get; protected set; }
-        public Node Parent { get; protected set; }
+        public virtual Node Parent { get; protected set; }
         public Node(string name, long? parentId)
         {
             CreatedAt = DateTime.Now;
